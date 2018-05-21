@@ -2,15 +2,14 @@
 Created by 逗蛆 on 2018/5/10
 
 """
-from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import Column, Integer, String
+
+from app.models.base import Base
 
 __author__ = "逗蛆"
 
-db = SQLAlchemy()
 
-
-class Book(db.Model):
+class Book(Base):
     id = Column(Integer, primary_key=True, autoincrement=True)
     title = Column(String(50), nullable=False)
     author = Column(String(30), default='佚名')
